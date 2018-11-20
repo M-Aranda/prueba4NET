@@ -33,5 +33,16 @@ namespace Prueba_4_Enfermedades.Properties {
                 return ((string)(this["registroDeEnfermedadesConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=RA52PCALU-31525;Initial Catalog=registroDeEnfermedades;User ID=sa;Pas" +
+            "sword=123456")]
+        public string registroDeEnfermedadesConnectionString1 {
+            get {
+                return ((string)(this["registroDeEnfermedadesConnectionString1"]));
+            }
+        }
     }
 }

@@ -22,13 +22,22 @@ namespace Prueba_4_Enfermedades.Web {
         protected global::System.Web.UI.HtmlControls.HtmlForm gridEnf;
         
         /// <summary>
-        /// Control GridView1.
+        /// Control gridEnfermedades.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView gridEnfermedades;
+        
+        /// <summary>
+        /// Control EnfermedadesDeLaBD.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource EnfermedadesDeLaBD;
         
         /// <summary>
         /// Control BD_Enfermedades.

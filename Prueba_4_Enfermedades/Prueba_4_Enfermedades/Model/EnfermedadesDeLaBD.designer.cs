@@ -36,7 +36,7 @@ namespace Prueba_4_Enfermedades.Model
     #endregion
 		
 		public EnfermedadesDeLaBDDataContext() : 
-				base(global::Prueba_4_Enfermedades.Properties.Settings.Default.registroDeEnfermedadesConnectionString, mappingSource)
+				base(global::Prueba_4_Enfermedades.Properties.Settings.Default.registroDeEnfermedadesConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}

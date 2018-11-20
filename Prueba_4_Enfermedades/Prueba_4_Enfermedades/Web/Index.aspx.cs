@@ -27,10 +27,83 @@ namespace Prueba_4_Enfermedades.Web
             btnModificar.Visible = false;
             btnEliminar.Visible = false;
 
-            gridEnf.DataBind();
+            gridEnfermedades.DataBind();
+            gridEnfermedades.SelectedIndex = -1;
             
             txtNombre.Text = "";
             txtDescripcion.Text = "";
+
+        }
+
+        protected void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            Enfermedad enf = new Enfermedad();
+            enf.nombre = txtNombre.Text;
+            enf.descripcion = txtDescripcion.Text;
+
+            db.Enfermedad.InsertOnSubmit(enf);
+            db.SubmitChanges();
+
+            gridEnfermedades.DataBind();
+
+            txtNombre.Text = "";
+            txtDescripcion.Text = "";
+        }
+
+
+        protected void cambiar (object sender, EventArgs e)
+        {
+            btnRegistrar.Visible = false;
+            btnModificar.Visible = true;
+            btnEliminar.Visible = true;
+
+            String id = gridEnfermedades.SelectedRow.Cells[1].Text;
+            Enfermedad enf = db.Enfermedad.Where(en=>en.id==int.Parse(id)).FirstOrDefault();
+
+            txtNombre.Text = enf.nombre;
+            txtDescripcion.Text = enf.descripcion;
+
+        }
+
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+            String id = "" + gridEnfermedades.SelectedRow.Cells[1].Text;
+            Enfermedad enf = db.Enfermedad.Where(pa => pa.id == int.Parse(id)).FirstOrDefault();
+
+            enf.nombre = txtNombre.Text;
+            enf.descripcion = txtDescripcion.Text;
+            db.SubmitChanges();
+
+            gridEnfermedades.DataBind();
+            gridEnfermedades.SelectedIndex = -1;
+            txtNombre.Text = "";
+            txtNombre.Text = "";
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            String id = gridEnfermedades.SelectedRow.Cells[1].Text;
+
+            Enfermedad enf = db.Enfermedad.Where(pa => pa.id == int.Parse(id)).FirstOrDefault();
+
+            db.Enfermedad.DeleteOnSubmit(enf);
+            db.SubmitChanges();
+
+            btnEliminar.Visible = false;
+            btnModificar.Visible = false;
+            btnRegistrar.Visible = true;
+
+            gridEnfermedades.DataBind();
+            gridEnfermedades.SelectedIndex = -1;
+            txtNombre.Text = "";
+            txtDescripcion.Text = "";
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(txtId.Text);
+            EnfermedadesDeLaBD.SelectCommand = "SELECT * FROM Enfermedad " +
+                "WHERE id="+id+" ";
 
         }
     }

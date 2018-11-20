@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="registroDeEnfermedades" Class="EnfermedadesDeLaBDDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=RA52PCALU-31523;Initial Catalog=registroDeEnfermedades;User ID=sa" SettingsObjectName="Prueba_4_Enfermedades.Properties.Settings" SettingsPropertyName="registroDeEnfermedadesConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=RA52PCALU-31525;Initial Catalog=registroDeEnfermedades;User ID=sa" SettingsObjectName="Prueba_4_Enfermedades.Properties.Settings" SettingsPropertyName="registroDeEnfermedadesConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Enfermedad" Member="Enfermedad">
     <Type Name="Enfermedad">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
