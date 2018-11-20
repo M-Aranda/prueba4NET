@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="registroDeEnfermedades" Class="EnfermedadesDeLaBDDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=RA52PCALU-31525;Initial Catalog=registroDeEnfermedades;User ID=sa" SettingsObjectName="Prueba_4_Enfermedades.Properties.Settings" SettingsPropertyName="registroDeEnfermedadesConnectionString1" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Enfermedad" Member="Enfermedad">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MARCELO;Initial Catalog=registroDeEnfermedades;Integrated Security=True" SettingsObjectName="Prueba_4_Enfermedades.Properties.Settings" SettingsPropertyName="registroDeEnfermedadesConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Enfermedad" Member="Enfermedads">
     <Type Name="Enfermedad">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />

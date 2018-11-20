@@ -32,6 +32,8 @@ namespace Prueba_4_Enfermedades.Web
             
             txtNombre.Text = "";
             txtDescripcion.Text = "";
+            txtAnio.Text = "";
+            txtId.Text = "";
 
         }
 
@@ -40,14 +42,20 @@ namespace Prueba_4_Enfermedades.Web
             Enfermedad enf = new Enfermedad();
             enf.nombre = txtNombre.Text;
             enf.descripcion = txtDescripcion.Text;
+            try  {
+                enf.anioDeDescubrimiento = int.Parse(txtAnio.Text);
+            } catch (Exception){
+                enf.anioDeDescubrimiento = 0;
+            }
 
-            db.Enfermedad.InsertOnSubmit(enf);
+            db.Enfermedads.InsertOnSubmit(enf);
             db.SubmitChanges();
 
             gridEnfermedades.DataBind();
 
             txtNombre.Text = "";
             txtDescripcion.Text = "";
+            txtAnio.Text = "";
         }
 
 
@@ -58,35 +66,43 @@ namespace Prueba_4_Enfermedades.Web
             btnEliminar.Visible = true;
 
             String id = gridEnfermedades.SelectedRow.Cells[1].Text;
-            Enfermedad enf = db.Enfermedad.Where(en=>en.id==int.Parse(id)).FirstOrDefault();
+            Enfermedad enf = db.Enfermedads.Where(en=>en.id==int.Parse(id)).FirstOrDefault();
 
             txtNombre.Text = enf.nombre;
             txtDescripcion.Text = enf.descripcion;
+            txtAnio.Text = enf.anioDeDescubrimiento.ToString();
 
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
             String id = "" + gridEnfermedades.SelectedRow.Cells[1].Text;
-            Enfermedad enf = db.Enfermedad.Where(pa => pa.id == int.Parse(id)).FirstOrDefault();
+            Enfermedad enf = db.Enfermedads.Where(pa => pa.id == int.Parse(id)).FirstOrDefault();
 
             enf.nombre = txtNombre.Text;
             enf.descripcion = txtDescripcion.Text;
+            try {
+                enf.anioDeDescubrimiento = int.Parse(txtAnio.Text);
+            } catch (Exception) {
+                enf.anioDeDescubrimiento = 0;
+            }
+
             db.SubmitChanges();
 
             gridEnfermedades.DataBind();
             gridEnfermedades.SelectedIndex = -1;
             txtNombre.Text = "";
-            txtNombre.Text = "";
+            txtDescripcion.Text = "";
+            txtAnio.Text = "";
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
             String id = gridEnfermedades.SelectedRow.Cells[1].Text;
 
-            Enfermedad enf = db.Enfermedad.Where(pa => pa.id == int.Parse(id)).FirstOrDefault();
+            Enfermedad enf = db.Enfermedads.Where(pa => pa.id == int.Parse(id)).FirstOrDefault();
 
-            db.Enfermedad.DeleteOnSubmit(enf);
+            db.Enfermedads.DeleteOnSubmit(enf);
             db.SubmitChanges();
 
             btnEliminar.Visible = false;
@@ -97,6 +113,7 @@ namespace Prueba_4_Enfermedades.Web
             gridEnfermedades.SelectedIndex = -1;
             txtNombre.Text = "";
             txtDescripcion.Text = "";
+            txtAnio.Text = "";
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
