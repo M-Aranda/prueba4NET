@@ -55,5 +55,15 @@ namespace Prueba_4_Enfermedades.Properties {
                 return ((string)(this["registroDeEnfermedadesConnectionString2"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:50842/Productor.asmx")]
+        public string Prueba_4_Enfermedades_localhost_Productor {
+            get {
+                return ((string)(this["Prueba_4_Enfermedades_localhost_Productor"]));
+            }
+        }
     }
 }

@@ -26,5 +26,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=MARCELO;Initial Catalog=registroDeEnfermedades;Integrated Security=True</Value>
     </Setting>
+    <Setting Name="Prueba_4_Enfermedades_localhost_Productor" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:50842/Productor.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
